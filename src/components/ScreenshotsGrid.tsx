@@ -1,5 +1,7 @@
 import useGameScreenshots from '@/hooks/useGameScreenshots';
 import { Skeleton } from './ui/skeleton';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 interface Props {
   gameId: number;
@@ -20,15 +22,19 @@ const ScreenshotsGrid = ({ gameId }: Props) => {
         skeletons.map((skeleton) => (
           <Skeleton key={skeleton} className='w-full h-[400px]' />
         ))}
-      {data?.results.map((screenshot) => (
-        <div className=' overflow-hidden rounded-md'>
-          <img
-            className='w-full h-full hover:scale-110 transition-transform duration-500'
-            key={screenshot.id}
-            src={screenshot.image}
-          />
-        </div>
-      ))}
+      <PhotoProvider>
+        {data?.results.map((screenshot) => (
+          <PhotoView src={screenshot.image}>
+            <div className=' overflow-hidden rounded-md hover:cursor-pointer'>
+              <img
+                className='w-full h-full hover:scale-110 transition-transform duration-500'
+                key={screenshot.id}
+                src={screenshot.image}
+              />
+            </div>
+          </PhotoView>
+        ))}
+      </PhotoProvider>
     </div>
   );
 };
