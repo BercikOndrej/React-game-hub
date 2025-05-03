@@ -94,6 +94,6 @@
 
 ## App Deployment
 
-- I made app deployment by `Vercel` and `GitHub` -> [GitHub repository](https://github.com/BercikOndrej/React-game-hub)
+- I made app deployment by `Vercel` and `GitHub` -> [React Game Hub](https://game-hub-theta-black.vercel.app)
 - It is a cloud platform for building and deploing application
 - An address, where my app is running is random generated -> **it is available only by vercel account authenticate and I get it on my vercel account**

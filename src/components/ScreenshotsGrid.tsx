@@ -1,7 +1,6 @@
 import useGameScreenshots from '@/hooks/useGameScreenshots';
 import { Skeleton } from './ui/skeleton';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
 
 interface Props {
   gameId: number;
